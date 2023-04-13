@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+.page-container {
+  width: 100%;
+  display: flex;
+}
+
+.clicker-container {
+  position: relative;
+  height: 100vh;
+  padding: 16px 0;
+  padding-bottom: 32px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 2.2;
+}
+
+.clicker-container::before {
+  content: '';
+  background: url("/public/img/fund.jpg");
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -3;
+}
+
+.factory-name {
+  background: none;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 32px;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: transform 250ms;  
+}
+
+.factory-name:hover {
+  transform: scale(1.1);
+}
+
+.salami-stats {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-top: 16px;
+  padding: 16px;
+}
+
+.salami-counter {
+  margin: 0;
+  font-size: 20px;
+}
+
+.salami-rate {
+  margin-bottom: 0;
+}
+
+.clicker-salami {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-top: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 250ms;
+}
+
+.clicker-salami::after {
+  content: '';
+  position: absolute;
+  background: url("/public/img/Salami.png");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.clicker-salami::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 108%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, black 60%, rgba(0, 0, 0, 0));
+  z-index: -1;
+  transition: transform 250ms;
+}
+
+.clicker-salami:hover::before {
+  transform: scale(1.05);
+}
+
+.clicker-salami:hover {
+  transform: scale(1.1);
+}
+
+.clicker-salami:active::before {
+  transform: scale(0.95);
+}
+
+.clicker-salami:active {
+  transform: scale(0.95);
+}
+
+.upgrade-container {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  flex: 3;
+}
+
+.upgrade {
+  display: flex;
+  position: relative;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.upgrade:hover::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.upgrade-owned {
+  font-size: 32px;
+  margin: 0;
+  margin-right: 16px;
+}
+
+.upgrade-title {
+  margin-top: 0;
+}
+
+.upgrade-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.upgrade-price {
+  margin: 0;
+  margin-right: 30px;
+  font-size: 40px;
+}
+
+.upgrade-price::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 52%;
+  background: url("/public/img/Salami.png");
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  transform: translateY(-50%);
+}
+
+.upgrade-button {
+  width: 100%;
+}
+
+.separator {
+  width: 16px;
+  background-color: chocolate;
+}
+
+.count-particle {
+  position: absolute;
+  font-size: 40px;
+  animation: particle-float 1s;
+}
+
+@keyframes particle-float {
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
