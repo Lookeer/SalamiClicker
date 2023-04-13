@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="page-container">
-      <ClickerContainer salami={gameState.salami} autoRate={gameState.autoRate} dispatch={dispatch} />
+      <ClickerContainer data={gameState} dispatch={dispatch} />
       <div className="separator"></div>
       <div className="upgrade-container">
         <Upgrade id={0} data={gameState.upgrades[0]} dispatch={dispatch}/>

@@ -44,34 +44,38 @@ body {
   text-align: center;
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
+  padding: 4px 0;
   border-radius: 32px;
   font-size: 22px;
   font-weight: bold;
   border: none;
-  border: 1px solid black;
   cursor: pointer;
   transition: transform 250ms;  
+  text-shadow: 0 0 8px black;
 }
 
 .factory-name:hover {
   transform: scale(1.1);
+  color: white;
+  text-shadow: 0 0 16px white;
 }
 
 .salami-stats {
   background-color: rgba(0, 0, 0, 0.4);
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   margin-top: 16px;
   padding: 16px;
+  text-shadow: 0 0 3px black, 0 0 5px black, 0 0 8px black;
 }
 
 .salami-counter {
   margin: 0;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .salami-rate {
+  margin-top: 8px;
   margin-bottom: 0;
+  font-size: 26px;
 }
 
 .clicker-salami {
@@ -195,12 +199,14 @@ body {
 .count-particle {
   position: absolute;
   font-size: 40px;
-  animation: particle-float 1s;
+  pointer-events: none;
+  text-shadow: 0 0 3px black, 0 0 5px black, 0 0 8px black;
+  animation: particle-float 2s;
 }
 
 @keyframes particle-float {
   100% {
-    transform: translateY(-100px);
+    transform: translateY(-150px);
     opacity: 0;
   }
 }

@@ -1,21 +1,34 @@
 import { useState } from "react";
 import CountParticle from "./CountParticle";
 
+let boostTimeout = null;
+
 export default function Salami(props) {
     const [particles, setParticles] = useState([]);
 
-    const handleClick = () => {
+    const handleClick = (event) => {
         var index;
         if (particles.length > 0) {
             index = particles[particles.length - 1].key + 1;
         }
         else {
-            index = 0; 
+            index = 0;
         }
-        setParticles(particles.concat(<CountParticle count={1} key={index} />));
+
+        // Spawn particles
+        setParticles((part) => part.concat(<CountParticle count={props.clickRate} key={index} top={event.clientY} left={event.clientX} />));
         setTimeout(() => {
-            setParticles(particles.filter((part) => part.key !== index));
+            setParticles((part) => part.slice(1));
         }, 1000);
+        
+        // Click boosting
+        if (props.clickBoosting) {
+            clearTimeout(boostTimeout);
+            boostTimeout = setTimeout(() => {
+                props.dispatch({type: 'haltBoost'})
+            }, 200);
+        }
+        
         props.dispatch({type: 'click'});
     };
 
