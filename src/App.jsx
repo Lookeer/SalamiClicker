@@ -26,8 +26,7 @@ function App() {
       <ClickerContainer data={gameState} dispatch={dispatch} />
       <div className="separator"></div>
       <div className="upgrade-container">
-        <Upgrade id={0} data={gameState.upgrades[0]} dispatch={dispatch}/>
-        <Upgrade id={1} data={gameState.upgrades[1]} dispatch={dispatch}/>
+        {gameState.upgrades.map((item, i) => <Upgrade id={i} data={gameState.upgrades[i]} dispatch={dispatch} />)}
       </div>
     </div>
   );

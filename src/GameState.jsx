@@ -6,7 +6,8 @@ const initialState = {
     clickBoosting: false,
     autoRate: 0,
     upgrades: [{name: "Loco Salami", description: "Salam din ala nebun uatafac", baseCost: 10, cost: 10, rate: 0.2, owned: 0},
-               {name: "Salam Sasesc", description: "Un salam de la doamne doamne", baseCost: 50, cost: 50, rate: 1, owned: 0}]
+               {name: "Salam Sasesc", description: "Un salam de la doamne doamne", baseCost: 50, cost: 50, rate: 1, owned: 0},
+               {name: "Black Salami", description: ";>", baseCost: 200, cost: 200, rate: 5, owned: 0}]
 };
 
 const reducer = (state, action) => {

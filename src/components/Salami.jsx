@@ -17,9 +17,10 @@ export default function Salami(props) {
 
         // Spawn particles
         setParticles((part) => part.concat(<CountParticle count={props.clickRate} key={index} top={event.clientY} left={event.clientX} />));
+        // Despawn particles
         setTimeout(() => {
             setParticles((part) => part.slice(1));
-        }, 1000);
+        }, 2000);
         
         // Click boosting
         if (props.clickBoosting) {
